@@ -1,0 +1,73 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #f4c2c2, #dac06a); /* Degradado de fondo */
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.message {
+  font-size: 67px; /* Aumentamos el tamaño de la fuente */
+  font-family: 'Courier New', Courier, monospace; /* Cambiamos la fuente a algo más romántico */
+  font-weight: bold; /* Hacemos la fuente más gruesa */
+  color: #423fe7; /* Color rojo para el texto */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Añadimos sombra al texto */
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.heart {
+  font-size: 100px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  animation: float 2s infinite;
+}
+
+.fireworks {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  pointer-events: none; /* Disable pointer events */
+  display: none; /* Initially hidden */
+}
+
+.firework {
+  position: absolute;
+  background-color: red;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  opacity: 0.8;
+  animation: explode 0.5s forwards;
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translate(-50%, 0) rotate(0);
+  }
+  50% {
+      transform: translate(-50%, -100px) rotate(360deg);
+  }
+}
+
+@keyframes explode {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(4);
+      opacity: 0;
+  }
+}
